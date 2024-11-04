@@ -11,6 +11,9 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Statistics from './Components/Statistics/Statistics';
 import Dashboard from './Components/Dashboard/Dashboard';
 import GadgetCards from './Components/GadgetCards/GadgetCards';
+import GadgetDetails from './Components/GadgetDetails/GadgetDetails';
+
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -32,9 +35,16 @@ const router = createBrowserRouter([
           {
             path:"/category/:category",
             element:<GadgetCards></GadgetCards>,
-            loader: () => fetch('/allProducts.json')
+            loader: () => fetch('../allProducts.json')
           }
         ]
+      },
+
+      {
+          path:"/details/:productId",
+          element: <GadgetDetails></GadgetDetails>,
+          loader: () => fetch("../allProducts.json")
+
       },
 
       {
@@ -43,7 +53,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        loader: () => fetch('../allProducts.json')
+
       }
     ]
   },
@@ -52,5 +64,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
      <RouterProvider router={router} />
+     <Toaster />
   </StrictMode>,
 )

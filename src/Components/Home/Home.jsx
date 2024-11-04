@@ -10,7 +10,7 @@ const Home = () => {
     
 
     return (
-        <div>
+        <div className="bg-[#09080f11] mb-10">
              <Banner></Banner>
 
              <div className="mt-64 lg:mt-96">

@@ -19,6 +19,9 @@ const GadgetCards = () => {
             const filteredByCategories = [...allProductsData].filter(product => product.category === category)
             setProducts(filteredByCategories)
         }
+        else{
+            setProducts(allProductsData.slice(0, 9))
+        }
         
 
     }, [category, allProductsData])

@@ -1,11 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdOutlineShoppingCart} from "react-icons/md"
 import { FaRegHeart } from "react-icons/fa";
 
 
-const Navbar = () => {
+const Navbar = ({ cartCount, wishListCount }) => {
+
+  const location = useLocation( )
+
+  const navbarBgColor = location.pathname === '/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/category') || location.pathname.startsWith('/details') 
+  ? 'bg-white text-black font-bold'
+  : 'bg-[#9538E2]'; 
+
+  const logoColour = location.pathname ==='/dashboard' || location.pathname === '/statistics' ||  location.pathname.startsWith('/category') || location.pathname.startsWith('/details') 
+  ? 'text-black': 'text-white'
+
     return (
-        <div className="navbar bg-[#9538E2] px-4 lg:px-16">
+        <div className={`navbar ${navbarBgColor} px-4 lg:px-16`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,21 +40,39 @@ const Navbar = () => {
         <NavLink to="/dashboard">Dashboard</NavLink>
       </ul>
     </div>
-    <Link to="/" className="text-white font-bold text-xl" >Gadget Heaven</Link>
+    <Link to="/" className={`${logoColour} font-bold text-xl`} >Gadget Heaven</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal gap-8 px-1">
 
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/statistics">Statistics</NavLink>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink className={( {isActive} ) => `${isActive? 'text-white font-bold underline' : 'text-black'}`} to="/">Home</NavLink>
+        <NavLink className={( {isActive} ) => `${isActive? 'text-[#9538E2] font-bold' : ''}`} to="/statistics">Statistics</NavLink>
+        <NavLink className={( {isActive} ) => `${isActive? 'text-[#9538E2] font-bold' : 'text-black'}`} to="/dashboard">Dashboard</NavLink>
 
     </ul>
   </div>
-  <div className="navbar-end">
-    <button className="mr-4 bg-white p-2 rounded-full"> <MdOutlineShoppingCart /> </button>
-    <button className="bg-white p-2 rounded-full"> <FaRegHeart /> </button>
-  </div>
+  <div className="navbar-end flex items-center gap-4">
+                <NavLink to="/dashboard">
+                <button className="relative bg-white p-2 rounded-full">
+                    <MdOutlineShoppingCart />
+                    {cartCount > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {cartCount}
+                        </span>
+                    )}
+                </button>
+                </NavLink>
+
+               <NavLink to="/dashboard">
+               <button className=" relative bg-white p-2 rounded-full"> <FaRegHeart />  
+                {wishListCount > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {wishListCount}
+                        </span>
+                    )}
+                </button>
+               </NavLink>
+            </div>
 </div>
     );
 };
