@@ -33,7 +33,6 @@ const Cart = ({ productList }) => {
     const toggleModal = () => {
 
         setIsModalOpen(!isModalOpen);
-       
 
     }
 
@@ -57,7 +56,7 @@ const Cart = ({ productList }) => {
                         Sort By Price <SlEqualizer />
                     </button>
 
-                    <button onClick={toggleModal} className="text-white font-bold px-4 py-2 bg-[#9538E2] rounded-3xl ">
+                    <button onClick={toggleModal} className="text-white font-bold px-4 py-2 bg-[#9538E2] rounded-3xl hover:bg-white hover:text-purple-600 hover:border border-purple-600">
                         Purchase
                     </button>
                 </div>

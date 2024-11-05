@@ -1,31 +1,36 @@
 [
     {
         "id": 1,
+        "category": "All-Products",
+        "slug": "allProducts"
+    },
+    {
+        "id": 2,
         "category": "Laptops",
         "slug": "laptops"
     },
     {
-        "id": 2,
+        "id": 3,
         "category": "Phones",
         "slug": "phones"
     },
     {
-        "id": 3,
+        "id": 4,
         "category": "Accessories",
         "slug": "accessories"
     },
     {
-        "id": 4,
+        "id": 5,
         "category": "iPhone",
         "slug": "iphone"
     },
     {
-        "id": 5,
+        "id": 6,
         "category": "Smart Watches",
         "slug": "smart-watches"
     },
     {
-        "id": 6,
+        "id": 7,
         "category": "MacBook",
         "slug": "macbook"
     }

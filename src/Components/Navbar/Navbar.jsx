@@ -7,15 +7,16 @@ const Navbar = ({ cartCount, wishListCount }) => {
 
   const location = useLocation( )
 
-  const navbarBgColor = location.pathname === '/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/category') || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
+  const navbarBgColor = location.pathname === '/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
   ? 'bg-white text-black font-bold'
   : 'bg-[#9538E2]'; 
 
-  const logoColour = location.pathname ==='/dashboard' || location.pathname === '/statistics' ||  location.pathname.startsWith('/category') || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
+
+  const logoColour = location.pathname ==='/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
   ? 'text-black': 'text-white'
 
     return (
-        <div className={`navbar ${navbarBgColor} px-4 lg:px-16`}>
+        <div className={`navbar ${navbarBgColor} px-4 lg:px-16 lg:w-11/12 lg:mx-auto lg:rounded-t-3xl lg:mt-10`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

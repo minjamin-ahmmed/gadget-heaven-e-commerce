@@ -19,6 +19,7 @@ const MainLayout = () => {
 
         if(!cartCount.includes(productId)){
             setCartCount((prevCount) => [...prevCount, productId])
+            setWishListCount((prevWishlist) => prevWishlist.filter(product => product.product_id !== productId));
         }
            
           
