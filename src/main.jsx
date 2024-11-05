@@ -14,6 +14,7 @@ import GadgetCards from './Components/GadgetCards/GadgetCards';
 import GadgetDetails from './Components/GadgetDetails/GadgetDetails';
 
 import { Toaster } from 'react-hot-toast';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 const router = createBrowserRouter([
   {
@@ -25,17 +26,18 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader: () => fetch('../category.json'),
+        loader: () => fetch('/category.json'),
+
         children: [
           {
             path:"/",
             element:<GadgetCards></GadgetCards>,
-            loader: () => fetch('../allProducts.json')
+            loader: () => fetch('/allProducts.json')
           },
           {
             path:"/category/:category",
             element:<GadgetCards></GadgetCards>,
-            loader: () => fetch('../allProducts.json')
+            loader: () => fetch('/allProducts.json')
           }
         ]
       },
@@ -43,18 +45,24 @@ const router = createBrowserRouter([
       {
           path:"/details/:productId",
           element: <GadgetDetails></GadgetDetails>,
-          loader: () => fetch("../allProducts.json")
+          loader: () => fetch("/allProducts.json")
 
       },
 
       {
         path:"/statistics",
-        element: <Statistics></Statistics>
+        element: <Statistics></Statistics>,
+        loader: () => fetch("/allProducts.json")
       },
       {
         path:"/dashboard",
         element: <Dashboard></Dashboard>,
         loader: () => fetch('../allProducts.json')
+
+      },
+      {
+        path:"/aboutUs",
+        element: <AboutUs></AboutUs>
 
       }
     ]

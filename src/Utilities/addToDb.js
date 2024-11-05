@@ -21,13 +21,16 @@ const addStoredCartList = (id) => {
     const storedList = getStoredCartList()
 
     if(storedList.includes(id)){
+       
         toast.error('Already in Your Cart!')
+        
     }
     else{
         storedList.push(id)
         const storedListStr = JSON.stringify(storedList)
         localStorage.setItem('product-list', storedListStr)
         toast.success('Added to Cart!')
+    
         
     }
 }
@@ -64,20 +67,6 @@ const addStoredWishList = (id) => {
         toast.success('Added to Wishlist!');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

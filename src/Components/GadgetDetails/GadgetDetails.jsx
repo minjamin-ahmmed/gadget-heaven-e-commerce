@@ -3,6 +3,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { addStoredCartList, addStoredWishList, getStoredWishList } from "../../Utilities/addToDb";
 import { useState } from "react";
 
+import ReactStars from "react-rating-stars-component";
+
 
 
 const GadgetDetails = () => {
@@ -29,16 +31,34 @@ const GadgetDetails = () => {
     
 
     const handleCartButton = (id) => {
-        addStoredCartList(id)
-        handleAddToCart(productId)
-    }
+
+      addStoredCartList(id)
+      handleAddToCart(productId)
+
+}
 
     const handleWishListButton = (id) => {
         addStoredWishList(id)
         handleWishlist(productId)
     }
 
-    
+  
+    const secondExample = {
+        size: 20,
+        count: 5,
+        color: "black",
+        activeColor: "#F9C004",
+        value: 4.5,
+        a11y: true,
+        isHalf: true,
+        emptyIcon: <i className="far fa-star" />,
+        halfIcon: <i className="fa fa-star-half-alt" />,
+        filledIcon: <i className="fa fa-star" />,
+        onChange: (newValue) => {
+          console.log(`Example 2: new value is ${newValue}`);
+        }
+      };
+      
   
     
 
@@ -72,19 +92,14 @@ const GadgetDetails = () => {
 
                     <p className="font-bold text-[#09080F] mb-4">Rating: </p>
 
-                    <div className="flex items-center gap-5 mb-4">
-                    <div className="rating rating-md">
-  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-  <input
-    type="radio"
-    name="rating-7"
-    className="mask mask-star-2 bg-orange-400"
-    defaultChecked />
-  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    <div className="flex items-center gap-5 mb-2">
+                    <div className="flex items-center gap-5 mb-2">
+
+  <ReactStars {...secondExample} />
+  <p className="px-2 text-sm bg-slate-300 rounded-full"> {rating} </p>
 </div>
-                        <p className="px-2 text-sm bg-slate-300 rounded-full"> {rating} </p>
+
+                        
                         </div> 
                 
                 <div className="flex items-center gap-5">

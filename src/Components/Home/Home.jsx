@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import GadgetCategories from "../GadgetCategories/GadgetCategories";
 
 
+
 const Home = () => {
 
     const categories = useLoaderData()
@@ -10,7 +11,8 @@ const Home = () => {
     
 
     return (
-        <div className="bg-[#09080f11] mb-10">
+        <div className="bg-[#09080f11] pb-14">
+
              <Banner></Banner>
 
              <div className="mt-64 lg:mt-96">

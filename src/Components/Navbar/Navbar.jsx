@@ -7,11 +7,11 @@ const Navbar = ({ cartCount, wishListCount }) => {
 
   const location = useLocation( )
 
-  const navbarBgColor = location.pathname === '/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/category') || location.pathname.startsWith('/details') 
+  const navbarBgColor = location.pathname === '/dashboard' || location.pathname === '/statistics' || location.pathname.startsWith('/category') || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
   ? 'bg-white text-black font-bold'
   : 'bg-[#9538E2]'; 
 
-  const logoColour = location.pathname ==='/dashboard' || location.pathname === '/statistics' ||  location.pathname.startsWith('/category') || location.pathname.startsWith('/details') 
+  const logoColour = location.pathname ==='/dashboard' || location.pathname === '/statistics' ||  location.pathname.startsWith('/category') || location.pathname.startsWith('/details') || location.pathname === '/aboutUs'
   ? 'text-black': 'text-white'
 
     return (
@@ -38,6 +38,7 @@ const Navbar = ({ cartCount, wishListCount }) => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/statistics">Statistics</NavLink>
         <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/aboutUs">AboutUs</NavLink>
       </ul>
     </div>
     <Link to="/" className={`${logoColour} font-bold text-xl`} >Gadget Heaven</Link>
@@ -48,6 +49,7 @@ const Navbar = ({ cartCount, wishListCount }) => {
         <NavLink className={( {isActive} ) => `${isActive? 'text-white font-bold underline' : 'text-black'}`} to="/">Home</NavLink>
         <NavLink className={( {isActive} ) => `${isActive? 'text-[#9538E2] font-bold' : ''}`} to="/statistics">Statistics</NavLink>
         <NavLink className={( {isActive} ) => `${isActive? 'text-[#9538E2] font-bold' : 'text-black'}`} to="/dashboard">Dashboard</NavLink>
+        <NavLink className={( {isActive} ) => `${isActive? 'text-[#9538E2] font-bold' : 'text-black'}`} to="/aboutUs">About Us</NavLink>
 
     </ul>
   </div>

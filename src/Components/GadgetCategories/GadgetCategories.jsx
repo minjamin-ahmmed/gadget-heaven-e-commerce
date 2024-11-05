@@ -8,11 +8,12 @@ const GadgetCategories = ({categories}) => {
         <div className="lg:ml-10">
            
 
-            <div className="">
+            <div>
 
                <div className="bg-white shadow-lg p-8 rounded-2xl flex gap-8 flex-col ">
 
-                
+               
+
                {
                     categories.map(category => 
                     

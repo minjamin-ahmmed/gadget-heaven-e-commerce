@@ -17,7 +17,7 @@ const Card = ({item}) => {
             
             <p>Price: {price} $ </p>
 
-           <NavLink to={`/details/${product_id}`}  >  <button className="text-[#9538E2] font-bold px-4 py-2 border border-x-[#9538E2] border-t-[#9538E2] border-b-pink-800 rounded-3xl"> View Details </button> </NavLink>
+           <NavLink to={`/details/${product_id}`}  >  <button className="text-[#9538E2] mt-4 font-bold px-4 py-2 border border-x-[#9538E2] border-t-[#9538E2] border-b-pink-800 rounded-3xl"> View Details </button> </NavLink>
         </div>
     );
 };
