@@ -7,9 +7,9 @@ const CartData = ({product}) => {
     console.log(product);
     
     return (
-        <div className="flex  gap-5 p-4 bg-white border border-gray-200 shadow-xl rounded-2xl my-5">
+        <div className="flex items-center  gap-5 p-4 bg-white border border-gray-200 shadow-xl rounded-2xl my-5">
            <div>
-            <img className="w-[100px] lg:w-[200px] lg:h-[124px] object-cover border border-gray-200 rounded-2xl p-2" src={product_image} alt="" />
+            <img className="w-[150px] lg:w-[200px] lg:h-[124px] object-cover border border-gray-200 rounded-2xl p-2" src={product_image} alt="" />
            </div>
 
           <div className="space-y-3">

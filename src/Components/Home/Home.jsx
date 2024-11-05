@@ -11,7 +11,7 @@ const Home = () => {
     
 
     return (
-        <div className="bg-[#09080f11] pb-14 lg:w-11/12 lg:mx-auto">
+        <div className="bg-[#09080f11] rounded-b-3xl pb-14 lg:w-11/12 lg:mx-auto">
 
              <Banner></Banner>
 
