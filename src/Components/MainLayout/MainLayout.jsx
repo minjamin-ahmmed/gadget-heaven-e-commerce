@@ -40,6 +40,7 @@ const MainLayout = () => {
         "/dashboard": "Dashboard",
         "/statistics": "Statistics",
         "/details": "Gadget Details",
+        "/aboutUs": "AboutUs"
         
       };
       

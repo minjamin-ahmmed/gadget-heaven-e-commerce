@@ -17,7 +17,7 @@ const Home = () => {
 
              <div className="mt-64 lg:mt-96">
 
-             <h1 className="text-center font-bold text-3xl text-[#09080F] mb-12">Explore Cutting-Edge Gadgetst</h1>
+             <h1 className="text-center font-bold text-3xl text-[#09080F] mb-12">Explore Cutting-Edge Gadgets</h1>
 
              </div>
 
