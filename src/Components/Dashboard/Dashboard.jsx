@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { getStoredCartList, getStoredWishList } from "../../Utilities/addToDb";
+import { clearStoredCartList, getStoredCartList, getStoredWishList } from "../../Utilities/addToDb";
 import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 
 
 const Dashboard = () => {
 
-    const [productList, setProductList] = useState([])
+
     const [wishlistedProducts, setWishListedProducts] = useState([])
     const [activeBtn, setActiveBtn] = useState('cart')
 
     const allProducts = useLoaderData()
   
+    const [productList, setProductList] = useState([])
 
     useEffect(() => {
 
@@ -34,7 +35,11 @@ const Dashboard = () => {
 
     }, [allProducts])
 
-
+ const clearCart = () => {
+        setProductList([]);
+        clearStoredCartList() 
+    
+    };
 
 
 
@@ -56,7 +61,7 @@ const Dashboard = () => {
 
                   <div className="bg-[#ECECEC] py-10">
                   {
-                        activeBtn === 'cart' && <Cart productList={productList}></Cart>
+                        activeBtn === 'cart' && <Cart productList={productList} clearCart={clearCart}></Cart>
                     }
 
                     {

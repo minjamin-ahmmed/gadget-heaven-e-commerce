@@ -69,5 +69,16 @@ const addStoredWishList = (id) => {
 }
 
 
+const clearStoredCartList = () => {
+    
+    const storedList = localStorage.getItem('product-list'); // Check 'product-list' instead of 'cart'
+    if (storedList) {
+        localStorage.removeItem('product-list'); // Correct key used here
+        console.log("Cart data cleared from localStorage."); // Confirm clearing in console
+    } else {
+        console.log("No cart data found in localStorage."); // Log if no data is found
+    }
+};
 
-export {addStoredCartList, addStoredWishList, getStoredWishList, getStoredCartList}
+
+export {addStoredCartList, addStoredWishList, getStoredWishList, getStoredCartList, clearStoredCartList}

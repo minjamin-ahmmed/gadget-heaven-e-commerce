@@ -39,7 +39,11 @@ const Statistics = () => {
           margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis  />
+          <XAxis  dataKey="productName"
+            angle={-45}
+            textAnchor="end"
+            interval={0} 
+            height={80}/>
           <YAxis label={{ value: "Price", angle: -90, position: 'insideLeft' }}/>
           <Tooltip />
           <Legend />

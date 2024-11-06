@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
-import {  getStoredCartList, getStoredWishList } from "../../Utilities/addToDb";
 import { Helmet } from "react-helmet";
 
 

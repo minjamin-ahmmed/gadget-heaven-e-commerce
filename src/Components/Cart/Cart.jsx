@@ -3,12 +3,12 @@ import CartData from "../CartData/CartData";
 import { SlEqualizer } from "react-icons/sl";
 import Modal from "../Modal/Modal";
 import modalImg from "../../assets/Group.png"
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Cart = ({ productList }) => {
+const Cart = ({ productList, clearCart }) => {
 
 
-    const { clearCart} = useOutletContext()
+    // const { clearCart} = useOutletContext()
     const [products, setProducts] = useState([]);
     const[isModalOpen, setIsModalOpen] = useState(false)
     
@@ -30,14 +30,19 @@ const Cart = ({ productList }) => {
     };
 
 
-    const toggleModal = () => {
-
-        setIsModalOpen(!isModalOpen);
-
-    }
+ 
 
     const handleConfirmPurchase = () => {
         navigate("/")
+        setProducts([]);
+        toggleModal();
+        clearCart();
+    }
+
+    const toggleModal = () => {
+        
+        setIsModalOpen(!isModalOpen);
+
     }
 
 
